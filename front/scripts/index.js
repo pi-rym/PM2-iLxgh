@@ -1,4 +1,4 @@
-console.log(tempData);
+
 
 //navbar
 const menuBtn = document.getElementById("menu-btn");
@@ -21,38 +21,40 @@ document.addEventListener('mousemove', (e) => {
     circle.style.top = `${y - circleSize / 2}px`;
 });
 
+//api
+
+const containerMovie = document.getElementById("flex");
+
+$.get('https://students-api.2.us-1.fl0.io/movies', (data, status) => {
+
+    const cardMovie = data.map(movie => {
+        // Verificar la longitud del título y agregar <br> si es necesario
+        let formattedTitle = movie.title;
+        if (formattedTitle.length > 20) { 
+
+            const index = formattedTitle.lastIndexOf(' ', 20);
+            formattedTitle = `${formattedTitle.slice(0, index)}<br>${formattedTitle.slice(index + 1)}`;
+        }
+
+        return `
+            <div class="project-card-sm" id="cards"> 
+                <div class="card-border-gradient"></div>
+                <div class="card-container">
+                    <img src="${movie.poster}">
+                    <div class="wrapper">
+                        <h2 class="title pt-3 pb-1">${formattedTitle}</h2>
+                        <p class="textCard"><strong>Año:</strong> ${movie.year}</p>
+                        <p class="textCard"><strong>Director:</strong> ${movie.director}</p>
+                        <p class="textCard"><strong>Duración:</strong> ${movie.duration}</p>
+                        <p class="textCard"><strong>Género:</strong> ${movie.genre}</p>
+                        <p class="textCard"><strong>Calificación:</strong> ${movie.rate}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join("");
+
+    containerMovie.innerHTML = cardMovie;
+});
 
 
-
-
-
-
-
-
-// .contenedor-pointing a {
-//     color: #97a1ffb6;
-//     font-size: 30px;
-//     transition: .5s;
-// }
-
-// .contenedor-pointing a::before {
-//     content: '';
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     border-radius: 50%;
-//     background: #100cf1;
-//     transition: .5s;
-//     transform: scale(.9);
-//     z-index: -1;
-// }
-
-// .contenedor-pointing a:hover::before {
-//     transform: scale(1.1);
-//     box-shadow: 0 0 15px #0400fd;
-// }
-
-// .contenedor-pointing a:hover {
-//     color: #0400ff;
-// }

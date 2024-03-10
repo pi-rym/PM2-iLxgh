@@ -2,8 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
   ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 10px;
@@ -54,7 +52,6 @@ body {
 
 
 
-
 .circle {
     width: 100vh;
     height: 100vh;
@@ -68,7 +65,7 @@ body {
     z-index: -1;
 }
 
-.navbar {
+.navbar-container {
     top: 0;
     position: sticky;
     height: 60px;
@@ -113,7 +110,6 @@ body {
     border-bottom: #0400ff solid 2px;
 }
 
-
 .text-var{
     cursor: pointer;
     width: auto;
@@ -132,10 +128,12 @@ body {
 
 
 .responsive-var .opcion {
-    color: rgb(0, 0, 0);
-    background-color: white;
+    color: #0400ff;
+    background-color: rgba(255, 255, 255, 0);
     margin-top: 17px;
+    cursor: default;
 }
+
 
 
 .responsive-var a {
@@ -146,6 +144,7 @@ body {
     font-weight: var(--font-weight-body);
     font-family: Dirty-line;
     font-size: calc(var(--font-size-base) * 1px);
+    transition: color .6s ease;
 }
 
 .texto {
@@ -163,7 +162,7 @@ body {
     display: flex;
     flex-direction: column;
     position: absolute;
-    background-color: #141414b2;
+    background-color: #14141400;
     width: 170px;
     top: 46px;
     left: 0;
@@ -174,10 +173,11 @@ body {
 }
 
 .menu li a {
-    color: white;
+    color: #acb6ff;
     font-weight: 0;
     font-family: Dirty-line;
     font-size: calc(var(--font-size-base) * 1px);
+    
 }
 
 .menu li {
@@ -185,12 +185,19 @@ body {
 }
 
 .menu li .seleccion {
-    color: rgb(255, 0, 0);
+    color: #0400ff;
+}
+
+.menu li .seleccion  {
+    border-bottom: #0400ff solid 2px;
 }
 
 .menu li a:hover  {
-    color: red;
+    color: #0400ff;
+    
 }
+
+
 
 .flex {
     padding-top: 100px;
@@ -256,7 +263,7 @@ body {
     padding: 0.75rem;
     border-radius: 12px;
     background-color: rgb(0, 0, 0);
-    height: 633px;
+    height: 653px;
     position: relative;
     justify-content: center;
 }
@@ -322,15 +329,16 @@ body {
 }
 
 .subtitle {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Dirty-line;
     font-size: 2.6vh;
-    background-image: linear-gradient( var(--white), var(--white));
+    background-image: linear-gradient( var(--blue1), var(--blue6));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: -.05em;
+    letter-spacing: 0.5em;
     pointer-events: none;
 }
+
 
 .background-contenedor {
     background: radial-gradient(ellipse at center, rgba(3, 12, 255, 0.411) 0%, rgba(0, 119, 248, 0.075) 50%, rgba(0, 180, 248, 0.034) 70%, rgba(202, 240, 248, 0) 100%);
@@ -375,13 +383,13 @@ body {
 
 .imagen-contenedor {
     position: absolute;
-    top: -43%;
+    top: -50%;
     left: 50%;
     transform: translate(-50%);
 }
 
 .popcorn-emoji {
-    animation: shake-left-right 2s linear both;
+    animation: shake-left-right 1.5s linear both;
     width: 9vh;
     height:9vh;
     margin-left: 0.1em;
