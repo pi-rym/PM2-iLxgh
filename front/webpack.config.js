@@ -1,8 +1,12 @@
 module.exports = {
-    entry: "../front/scripts/index.js",
-
+    entry: {
+        index: "../front/scripts/index.js",
+        about: "../front/scripts/about.js"
+    
+    }, 
+    
     output: {
         path: __dirname + "/public",
-        filename: "bundle.js",
+        filename: "[name].bundle.js",
     },
 };

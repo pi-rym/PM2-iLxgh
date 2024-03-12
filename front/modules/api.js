@@ -1,7 +1,7 @@
 const renderMovies = () => {
     const containerMovie = document.getElementById("flex");
   
-    $.get("https://students-api.2.us-1.fl0.io/movies", (data, status) => {
+    $.get("", (data, status) => {
       const cardMovie = data
         .map((movie) => {
           // Verificar la longitud del título y agregar <br> si es necesario
