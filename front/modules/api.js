@@ -1,20 +1,24 @@
-const renderMovies = () => {
+const axios = require("axios");
+
+const renderMovies = async () => {
+  try {
+    const response = await axios.get("https://students-api.up.railway.app/movies");
+    const data = response.data;
     const containerMovie = document.getElementById("flex");
-  
-    $.get("", (data, status) => {
-      const cardMovie = data
-        .map((movie) => {
-          // Verificar la longitud del título y agregar <br> si es necesario
-          let formattedTitle = movie.title;
-          if (formattedTitle.length > 20) {
-            const index = formattedTitle.lastIndexOf(" ", 20);
-            formattedTitle = `${formattedTitle.slice(
-              0,
-              index
-            )}<br>${formattedTitle.slice(index + 1)}`;
-          }
-  
-          return `
+
+    const cardMovie = data
+      .map((movie) => {
+        // Verificar la longitud del título y agregar <br> si es necesario
+        let formattedTitle = movie.title;
+        if (formattedTitle.length > 20) {
+          const index = formattedTitle.lastIndexOf(" ", 20);
+          formattedTitle = `${formattedTitle.slice(
+            0,
+            index
+          )}<br>${formattedTitle.slice(index + 1)}`;
+        }
+
+        return `
               <div class="project-card-sm" id="cards"> 
                   <div class="card-border-gradient"></div>
                   <div class="card-container">
@@ -30,12 +34,13 @@ const renderMovies = () => {
                   </div>
               </div>
           `;
-        })
-        .join("");
-  
-      containerMovie.innerHTML = cardMovie;
-    });
-  };
+      })
+      .join("");
 
+    containerMovie.innerHTML = cardMovie;
+  } catch (err) {
+    console.log(err.message);
+  }
+};
 
-  module.exports = {renderMovies};
+module.exports = { renderMovies };
