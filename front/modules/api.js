@@ -8,8 +8,11 @@ const renderMovies = async () => {
 
     const cardMovie = data
       .map((movie) => {
+
+       const {title, year, director, duration, genre, rate, poster} = movie; 
+
         // Verificar la longitud del título y agregar <br> si es necesario
-        let formattedTitle = movie.title;
+        let formattedTitle = title;
         if (formattedTitle.length > 20) {
           const index = formattedTitle.lastIndexOf(" ", 20);
           formattedTitle = `${formattedTitle.slice(
@@ -22,14 +25,14 @@ const renderMovies = async () => {
               <div class="project-card-sm" id="cards"> 
                   <div class="card-border-gradient"></div>
                   <div class="card-container">
-                      <img src="${movie.poster}">
+                      <img src="${poster}">
                       <div class="wrapper">
                           <h2 class="title pt-3 pb-1">${formattedTitle}</h2>
-                          <p class="textCard"><strong>Año:</strong> ${movie.year}</p>
-                          <p class="textCard"><strong>Director:</strong> ${movie.director}</p>
-                          <p class="textCard"><strong>Duración:</strong> ${movie.duration}</p>
-                          <p class="textCard"><strong>Género:</strong> ${movie.genre}</p>
-                          <p class="textCard"><strong>Calificación:</strong> ${movie.rate}</p>
+                          <p class="textCard"><strong>Año:</strong> ${year}</p>
+                          <p class="textCard"><strong>Director:</strong> ${director}</p>
+                          <p class="textCard"><strong>Duración:</strong> ${duration}</p>
+                          <p class="textCard"><strong>Género:</strong> ${genre}</p>
+                          <p class="textCard"><strong>Calificación:</strong> ${rate}</p>
                       </div>
                   </div>
               </div>
