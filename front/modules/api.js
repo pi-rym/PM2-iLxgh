@@ -2,14 +2,13 @@ const axios = require("axios");
 
 const renderMovies = async () => {
   try {
-    const response = await axios.get("https://students-api.up.railway.app/movies");
+    const response = await axios.get("http://localhost:3000/movies");
     const data = response.data;
     const containerMovie = document.getElementById("flex");
 
     const cardMovie = data
       .map((movie) => {
-
-       const {title, year, director, duration, genre, rate, poster} = movie; 
+        const { title, year, director, duration, genre, rate, poster } = movie;
 
         // Verificar la longitud del título y agregar <br> si es necesario
         let formattedTitle = title;
