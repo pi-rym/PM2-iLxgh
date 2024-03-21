@@ -27,12 +27,12 @@ body {
 
 @font-face {
     font-family: Dirty-line;
-    src: url(/PM2-iLxgh/front/css/font/Dirtyline\ 36daysoftype\ 2022.otf);
+    src: url(../assets/font/Dirtyline\ 36daysoftype\ 2022.otf);
 }
 
 @font-face {
     font-family: Dahlia;
-    src: url(/PM2-iLxgh/front/css/font/dahlia-bold.otf);
+    src: url(../assets/font/dahlia-bold.otf);
 }
 
 .pt-mono-regular {

@@ -2,9 +2,10 @@ const axios = require("axios");
 
 const renderMovies = async () => {
   try {
+
     const response = await axios.get("http://localhost:3000/movies");
     const data = response.data;
-    const containerMovie = document.getElementById("flex");
+    const containerMovie = document.getElementById("movie-container");
 
     const cardMovie = data
       .map((movie) => {
@@ -41,7 +42,7 @@ const renderMovies = async () => {
 
     containerMovie.innerHTML = cardMovie;
   } catch (err) {
-    console.log(err.message);
+    console.log("no se conecta" + err.message);
   }
 };
 

@@ -30,12 +30,12 @@ body {
 
 @font-face {
   font-family: Dirty-line;
-  src: url(/PM2-iLxgh/front/css/font/Dirtyline\ 36daysoftype\ 2022.otf);
+  src: url(../assets/font/Dirtyline\ 36daysoftype\ 2022.otf);
 }
 
 @font-face {
   font-family: Dahlia;
-  src: url(/PM2-iLxgh/front/css/font/dahlia-bold.otf);
+  src: url(../assets/font/dahlia-bold.otf);
 }
 
 :root {
@@ -439,6 +439,25 @@ body {
   color: #0400ff;
 }
 
+.presentation,
+.presentation-text {
+  opacity: 0;
+  animation: slideIn 1.5s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+
+
 @keyframes bounce {
   0%,
   100% {
@@ -519,7 +538,7 @@ body {
 }
 
 @media (max-width: 795px) {
-  .presentation {
+  .presentation-text {
     font-size: 10vh;
   }
   .subtitle {
@@ -540,7 +559,7 @@ body {
 }
 
 @media (max-width: 642px) {
-  .presentation {
+  .presentation-text {
     font-size: 7.1vh;
   }
   .subtitle {
@@ -562,19 +581,3 @@ body {
   }
 }
 
-.presentation,
-.presentation-text {
-  opacity: 0;
-  animation: slideIn 1.5s forwards;
-}
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}

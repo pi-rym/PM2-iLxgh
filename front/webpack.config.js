@@ -1,8 +1,8 @@
 module.exports = {
     entry: {
         index: "../front/scripts/index.js",
-        about: "../front/scripts/about.js"
-    
+        about: "../front/scripts/about.js",
+        form: "../front/scripts/form.js"
     }, 
     
     output: {
@@ -10,3 +10,6 @@ module.exports = {
         filename: "[name].bundle.js",
     },
 };
+
+
+
